@@ -37,4 +37,16 @@ public class Porta {
     public void pintar(String umaCor) {
         this.cor = umaCor;
     }
+
+    public static void main(String[] args) {
+        Porta porta = new Porta("azul", 2.0f, 3.0f);
+
+        System.out.println("Cor: " + porta.verCor());
+        System.out.println("Está aberta: " + porta.estaAberta());
+
+        porta.abrir();
+        System.out.println("Está aberta: " + porta.estaAberta());
+        porta.fechar();
+        System.out.println("Está aberta: " + porta.estaAberta());
+    }
 }
