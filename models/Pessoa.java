@@ -14,4 +14,10 @@ public class Pessoa {
     public int verIdade() { return this.idade; }
 
     public String verNome() { return this.nome; }
+
+    public static void main(String[] args) {
+        Pessoa pessoa = new Pessoa("Jonatas", 27);
+        System.out.println("Nome: " + pessoa.verNome());
+        System.out.println("Nome: " + pessoa.verIdade());
+    }
 }
