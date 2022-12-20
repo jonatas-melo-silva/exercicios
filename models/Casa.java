@@ -9,10 +9,6 @@ public class Casa {
     this.porta = new Porta[10];
   }
 
-  public void pintar(String umaCor) {
-    this.cor = umaCor;
-  }
-
   public void adicionarPorta(Porta umaPorta) {
     for (int i = 0; i < porta.length; i++) {
       if (porta[i] == null) {
@@ -42,11 +38,19 @@ public class Casa {
     return portasFechadas;
   }
 
+  public String getCor() {
+    return this.cor;
+  }
+
+  public void pintar(String umaCor) {
+    this.cor = umaCor;
+  }
+
   public static void main(String[] args) {
-    Casa casa = new Casa();
+    CasaHashSet casa = new CasaHashSet();
 
     casa.pintar("azul");
-    
+
     Porta porta1 = new Porta("azul", 2.0f, 3.0f);
     porta1.abrir();
     Porta porta2 = new Porta("verde", 2.0f, 3.0f);
@@ -57,11 +61,15 @@ public class Casa {
     casa.adicionarPorta(porta1);
     casa.adicionarPorta(porta2);
     casa.adicionarPorta(porta3);
-    
+
     porta3.fechar();
     porta3.abrir();
 
     System.out.println("Portas abertas: " + casa.contarPortasAbertas());
+    System.out.println("Portas fechadas: " + casa.contarPortasFechadas());
+
+    porta3.fechar();
+
     System.out.println("Portas fechadas: " + casa.contarPortasFechadas());
   }
 }
